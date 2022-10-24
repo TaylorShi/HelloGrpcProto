@@ -19,6 +19,4 @@ message QueryPayStatusRequest
 message QueryPayStatusResponse
 {
 	bool isPayed = 1;
-
-	string orderId = 2;
 }
