@@ -2,11 +2,17 @@ syntax = "proto3";
 
 option csharp_namespace = "GrpcServices";
 
+// 订单服务
 service OrderGrpc
 {
+	// 创建订单
 	rpc CreateOrder(CreateOrderCommand) returns (CreateOrderResult);
+
+	// 搜索订单
+	rpc SearchOrder(SearchOrderCommand) returns (SearchOrderResult);
 }
 
+// 创建订单命令
 message CreateOrderCommand
 {
 	string buyerId = 1;
@@ -16,7 +22,20 @@ message CreateOrderCommand
 	int32 units = 5;
 }
 
+// 创建订单结果
 message CreateOrderResult
 {
 	int32 orderId = 1;
+}
+
+// 搜索订单命令
+message SearchOrderCommand
+{
+	string UserName = 1;
+}
+
+// 搜索订单结果
+message SearchOrderResult
+{
+	repeated string Orders = 1;
 }
