@@ -9,7 +9,7 @@ service OrderGrpc
 	rpc CreateOrder(CreateOrderCommand) returns (CreateOrderResult);
 
 	// 搜索订单
-	rpc SearchOrder(SearchOrderCommand) returns (SearchOrderResult);
+	rpc SearchOrder(SearchOrderRequest) returns (SearchOrderResponse);
 }
 
 // 创建订单命令
@@ -29,13 +29,13 @@ message CreateOrderResult
 }
 
 // 搜索订单命令
-message SearchOrderCommand
+message SearchOrderRequest
 {
 	string UserName = 1;
 }
 
 // 搜索订单结果
-message SearchOrderResult
+message SearchOrderResponse
 {
 	repeated string Orders = 1;
 }
