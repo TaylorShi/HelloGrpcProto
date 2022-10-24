@@ -18,5 +18,7 @@ message QueryPayStatusRequest
 // 搜索订单结果
 message QueryPayStatusResponse
 {
-	bool IsPayed = 1;
+	bool isPayed = 1;
+
+	string orderId = 2;
 }
