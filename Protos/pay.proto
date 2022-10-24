@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServices";
+
+// 支付服务
+service PayGrpc
+{
+	// 查询支付状态
+	rpc QueryPayStatus(QueryPayStatusRequest) returns (QueryPayStatusResponse);
+}
+
+// 查询支付状态
+message QueryPayStatusRequest
+{
+	string orderId = 1;
+}
+
+// 搜索订单结果
+message QueryPayStatusResponse
+{
+	bool IsPayed = 1;
+}
